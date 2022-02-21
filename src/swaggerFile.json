@@ -1,0 +1,70 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "title": "User Creator",
+        "description": "API for a optional activity at Rocketseat.",
+        "version": "1.0.0",
+        "contact": {
+            "email": "eduardofvicentini@gmail.com"
+        }
+    },
+    "servers": {
+        "url": "localhost:3333",
+        "description": "Executing for tests."
+    },
+    "paths": {
+        "/users": {
+            "post":{
+                "summary": "Create",
+                "description" : "Creates a new user",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "name": {
+                                        "type": "string"
+                                    },
+                                    "email": {
+                                        "type": "string"
+                                    }
+                                },
+                                "example": {
+                                    "name": "Eduardo Frota Vicentini",
+                                    "email": "eduardofvicentini@gmail.com"
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Created User",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "name": {
+                                            "type": "string"
+                                        },
+                                        "email": {
+                                            "type": "string"
+                                        }
+                                
+                                    }    
+                                }   
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Error on create!"
+                    }
+                }
+            }
+
+        }
+    }
+
+}
